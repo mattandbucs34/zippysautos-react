@@ -28,10 +28,6 @@ const Vehicle = sequelize.define('Vehicle', {
   type_id: {
     type: DataTypes.INTEGER,
     allowNull: false,
-    references: {
-      model: VehicleType,
-      key: 'type_id'
-    }
   },
   class_id: {
     type: DataTypes.INTEGER,
@@ -43,11 +39,9 @@ const Vehicle = sequelize.define('Vehicle', {
   }
 }, {});
 
-Vehicle.addScope
-
 Vehicle.belongsTo(VehicleClass, {
   foreignKey: 'class_id',
-  onDelete: 'CASCADE',
+  onDelete: 'CASCADE'
 });
 
 VehicleClass.hasOne(Vehicle, {

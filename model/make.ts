@@ -12,8 +12,7 @@ const VehicleMake = sequelize.define('Make', {
   },
   make: {
     type: DataTypes.STRING,
-    allowNull: false,
-    references: 'make_id'
+    allowNull: false
   }
 }, {
   tableName: 'makes',

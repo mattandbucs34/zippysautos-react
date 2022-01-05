@@ -1,3 +1,4 @@
+import { Sequelize } from 'sequelize';
 import mysql from 'mysql';
 
 export const db = mysql.createConnection({
@@ -14,3 +15,5 @@ export const seqDB = {
   database: 'zippysautos',
   dialect: 'mysql'
 }
+
+export const sequelize = new Sequelize(seqDB.database, seqDB.user, seqDB.password, {dialect: "mysql"});
